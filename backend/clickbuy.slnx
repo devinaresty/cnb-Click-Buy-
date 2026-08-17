@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="clickbuy.Api/clickbuy.Api.csproj" />
+  <Project Path="clickbuy.Application/clickbuy.Application.csproj" />
+  <Project Path="clickbuy.Domain/clickbuy.Domain.csproj" />
+  <Project Path="clickbuy.Infrastructure/clickbuy.Infrastructure.csproj" />
+</Solution>

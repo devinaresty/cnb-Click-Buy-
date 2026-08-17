@@ -1,0 +1,6 @@
+@clickbuy.Api_HostAddress = http://localhost:5269
+
+GET {{clickbuy.Api_HostAddress}}/weatherforecast/
+Accept: Application/json
+
+###

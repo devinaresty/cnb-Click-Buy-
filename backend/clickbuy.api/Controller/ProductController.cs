@@ -4,29 +4,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace clickbuy.api.Controllers;
 
-// Atribut ini menandakan bahwa class ini adalah API, dan akan memvalidasi input otomatis
 [ApiController]
-// [controller] akan otomatis diganti menjadi "products" berdasarkan nama class ProductsController
 [Route("api/[controller]")] 
-public class ProductsController : ControllerBase
+public class ProductController : ControllerBase
 {
     private readonly IProductRepository _repository;
 
-    // Dependency Injection: API meminta IProductRepository
-    public ProductsController(IProductRepository repository)
+    public ProductController(IProductRepository repository)
     {
         _repository = repository;
     }
 
-    // Endpoint: GET /api/products
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
         var products = await _repository.GetAllAsync();
-        return Ok(products); // Mengembalikan status 200 OK beserta datanya
+        return Ok(products); 
     }
 
-    // Endpoint: GET /api/products/{id}
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {
@@ -34,7 +29,7 @@ public class ProductsController : ControllerBase
         
         if (product == null)
         {
-            return NotFound(new { message = "Produk tidak ditemukan" }); // Status 404
+            return NotFound(new { message = "Produk tidak ditemukan" }); 
         }
         
         return Ok(product);

@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApiContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Hanya mendaftarkan Repository
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
